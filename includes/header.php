@@ -32,6 +32,9 @@
               <li class="nav-item <?php if($curdir == "categories.php"){echo "active";} ?>">
                 <a class="nav-link" href="categories.php">Categories</a>
               </li>
+              <li class="nav-item <?php if($curdir == "search.php"){echo "active";} ?>">
+                <a class="nav-link" href="categories.php">Quick Search</a>
+              </li>
             </ul>
           </div>
         </nav>
