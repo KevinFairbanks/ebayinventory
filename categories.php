@@ -9,6 +9,9 @@
 
     include('includes/functions.php');
     include('includes/header.php');
+
+    $catq = "SELECT * from category ORDER BY type ASC";
+    $catr = mysqli_query($conn,$catq);
 ?>
 
 <section style='background-color:#ededed;padding:15px;'>

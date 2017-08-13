@@ -4,28 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <style media="screen">
-        .item{
-            padding:15px;
-            border:1px solid #CCC;
-            border-radius: 4px;
-            background-color: white;
-            margin-bottom: 5px;
-        }
-        .new-item{
-            background-color:white;
-            padding:15px;
-            border-radius: 4px;
-            border:1px solid #ededed;
-            display:block;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/base.css">
+
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">

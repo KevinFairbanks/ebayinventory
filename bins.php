@@ -9,6 +9,9 @@
 
     include('includes/functions.php');
     include('includes/header.php');
+
+    $binq = "SELECT * from bin ORDER BY bid ASC";
+    $binr = mysqli_query($conn, $binq);
 ?>
 
 <?php  // LIST OF BINS ?>

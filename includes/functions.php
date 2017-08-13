@@ -8,16 +8,6 @@
         return random_color_part() . random_color_part() . random_color_part();
     }
 
-    $binq = "SELECT * from bin ORDER BY bid ASC";
-    $binr = mysqli_query($conn, $binq);
-
-    $catq = "SELECT * from category ORDER BY type ASC";
-    $catr = mysqli_query($conn,$catq);
-
-    $itemq = "SELECT * from item ORDER BY id ASC";
-    $itemr = mysqli_query($conn,$itemq);
-
-
     if(isset($_POST['addbin'])) {
         $bin = strtoupper($_POST['binnumber']);
         $color = random_color();
@@ -63,13 +53,13 @@
         for($i=0;$i<1;$i++){
             $sn .= (!($i % 5) && $i ? '' : '').$charsA[rand(0, $max)];
         }
-        for($i=0;$i<6;$i++){
+        for($i=0;$i<4;$i++){
             $sn .= (!($i % 5) && $i ? '' : '').$chars[rand(0, $max)];
         }
 
 
         $q = "INSERT into item (brand, title, description, photo, color, size, serialnum, binID, categoryID, isSold,isListed) VALUES ('$brand','$title','$desc','$file','$color','$size', '$sn','$binnumber','$catID','$sold','$listed')";
-        $r = mysql_query($q);
+        $r = mysqli_query($conn,$q);
 
         header("location: items.php");
 
@@ -80,12 +70,12 @@
 
         //check current bins
         $ccat = "SELECT * FROM category WHERE type='$cat'";
-        $rcat = mysql_query($ccat);
-        $numrows = mysql_num_rows($rcat);
+        $rcat = mysqli_query($conn,$ccat);
+        $numrows = mysqli_num_rows($rcat);
 
         if($numrows == 0){
             $q = "INSERT into category (type) VALUES ('$cat')";
-            $r = mysql_query($q);
+            $r = mysqli_query($conn, $q);
             header("location: categories.php");
         }else{
             echo "that category exists";

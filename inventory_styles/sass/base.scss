@@ -1,0 +1,57 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import '_colors';
+
+body{
+}
+
+
+.ui-container{
+    padding:15px;
+    border:1px solid #ededed;
+    background-color: $bgwhite;
+    border-radius:4px;
+
+    &.dash{
+        text-align:center;
+        text-shadow:0 2px #FFF;
+        h3{
+            color:#999;
+        }
+    }
+    &.item{
+        position: relative;
+        padding:15px;
+        border:1px solid #ededed;
+        border-radius: 4px;
+        background-color: white;
+        margin-bottom: 5px;
+        font-size:13px;
+        .title{
+            font-size:15px;
+        }
+        .item-attr{
+            text-align:right;
+            font-size:14px;
+        }
+        .info-bar{
+            position: absolute;
+            right:-1px;
+            top:2px;
+            .bin{
+                padding:3px 5px;
+                border-radius:0 4px 0 4px;
+                color:white
+            }
+            .listed{
+                color:orange;
+                font-weight:bold;
+            }
+        }
+    }
+}
+section{
+    padding:20px;
+}
