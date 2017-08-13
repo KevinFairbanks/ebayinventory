@@ -9,33 +9,34 @@
     }
 
     $binq = "SELECT * from bin ORDER BY bid ASC";
-    $binr = mysql_query($binq);
+    $binr = mysqli_query($conn, $binq);
 
     $catq = "SELECT * from category ORDER BY type ASC";
-    $catr = mysql_query($catq);
+    $catr = mysqli_query($conn,$catq);
 
     $itemq = "SELECT * from item ORDER BY id ASC";
-    $itemr = mysql_query($itemq);
+    $itemr = mysqli_query($conn,$itemq);
 
-    if($_POST["addbin"]) {
+
+    if(isset($_POST['addbin'])) {
         $bin = strtoupper($_POST['binnumber']);
         $color = random_color();
 
         //check current bins
         $cbin = "SELECT * FROM bin WHERE bid='$bin'";
-        $rbin = mysql_query($cbin);
-        $numrows = mysql_num_rows($rbin);
+        $rbin = mysqli_query($conn,$cbin);
+        $numrows = mysqli_num_rows($rbin);
 
         if($numrows == 0){
             $q = "INSERT into bin (bid, color) VALUES ('$bin', '#$color')";
-            $r = mysql_query($q);
+            $r = mysqli_query($conn,$q);
             header("location: bins.php");
         }else{
             echo "that bin exists";
         }
     }
 
-    if($_POST["additem"]) {
+    if(isset($_POST["additem"])) {
 
         $file = $_POST['uploadedfile'];
         $brand = $_POST['brand'];
@@ -71,17 +72,10 @@
         $r = mysql_query($q);
 
         header("location: items.php");
-        // if($r){
-        //     header("location: items.php");
-        // }else{
-        //
-        // }
-
-
 
     }
 
-    if($_POST["addcat"]) {
+    if(isset($_POST["addcat"])) {
         $cat = str_replace("'","&rsquo;",$_POST['catname']);
 
         //check current bins
@@ -98,27 +92,27 @@
         }
     }
 
-    if($_POST["removebin"]){
+    if(isset($_POST["removebin"])){
         $rbin = $_POST["removebin"];
         $q = "DELETE FROM bin WHERE id='$rbin'";
-        $r = mysql_query($q);
+        $r = mysqli_query($conn, $q);
         header("location: bins.php");
     }
-    if($_POST["removecat"]){
+    if(isset($_POST["removecat"])){
         $rcat = $_POST["removecat"];
         $q = "DELETE FROM category WHERE id='$rcat'";
-        $r = mysql_query($q);
+        $r = mysqli_query($conn, $q);
         header("location: categories.php");
     }
 
     function getNumberCount($type){
-
+        global $conn;
         switch($type){
             case "item":
                 $q = "SELECT COUNT(id) from item";
-                $r = mysql_query($q);
-                $count = mysql_fetch_array($r);
-                if($num_rows < 0){
+                $r = mysqli_query($conn, $q);
+                $count = mysqli_fetch_array($r);
+                if($count < 0){
                     return "0";
                 }else{
                     return $count[0];
@@ -126,14 +120,14 @@
             break;
             case "bin":
                 $q = "SELECT COUNT(id) from bin";
-                $r = mysql_query($q);
-                $count = mysql_fetch_array($r);
+                $r = mysqli_query($conn,$q);
+                $count = mysqli_fetch_array($r);
                 return $count[0];
             break;
             case "category":
                 $q = "SELECT COUNT(id) from category";
-                $r = mysql_query($q);
-                $count = mysql_fetch_array($r);
+                $r = mysqli_query($conn,$q);
+                $count = mysqli_fetch_array($r);
                 return $count[0];
             break;
         }

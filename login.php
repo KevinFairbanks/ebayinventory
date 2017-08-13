@@ -11,7 +11,7 @@
             die ("ERROR: Please enter password!");
         }
 
-        if( $name == "inventory" && $pass == "eb4yitems" ){
+        if( $name == "listing" && $pass == "items_x!" ){
 
             // Authentication successful - Set session
             session_start();

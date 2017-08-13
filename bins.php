@@ -39,7 +39,7 @@
                     <tbody>
                         <form class="" method="post">
 
-                        <?php while($row = mysql_fetch_object($binr)): ?>
+                        <?php while($row = mysqli_fetch_object($binr)): ?>
                             <tr>
                                 <td class='align-middle'>
                                     Bin

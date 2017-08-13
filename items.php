@@ -46,8 +46,8 @@
                                     <option value="">Select Bin</option>
                                     <?php
                                         $q = "SELECT * FROM bin";
-                                        $r = mysql_query($q);
-                                        while($row = mysql_fetch_object($r)){
+                                        $r = mysqli_query($conn,$q);
+                                        while($row = mysqli_fetch_object($r)){
                                             echo "<option value='$row->id'>$row->bid</option>";
                                         }
                                     ?>
@@ -58,8 +58,8 @@
                                     <option value="">Select Category</option>
                                     <?php
                                         $q3 = "SELECT * FROM category";
-                                        $r3 = mysql_query($q3);
-                                        while($row3 = mysql_fetch_object($r3)){
+                                        $r3 = mysqli_query($conn,$q3);
+                                        while($row3 = mysqli_fetch_object($r3)){
                                             echo "<option value='$row3->id'>$row3->type</option>";
                                         }
                                     ?>
@@ -76,7 +76,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <?php while($row = mysql_fetch_object($itemr)): ?>
+                <?php while($row = mysqli_fetch_object($itemr)): ?>
                 <div class="item">
 
                     <div class="row">
@@ -91,8 +91,8 @@
                                 Item#: <?php echo $row->serialnum; ?>
                                 <?php
                                     $q1 = "SELECT * FROM bin where id='$row->binID'";
-                                    $r1 = mysql_query($q1);
-                                    $row1 = mysql_fetch_object($r1);
+                                    $r1 = mysqli_query($conn, $q1);
+                                    $row1 = mysqli_fetch_object($r1);
                                     echo "Bin#: <span style='padding:3px;border-radius:4px;background-color:$row1->color;color:white'>$row1->bid</span>";
                                 ?>
                             </div>
@@ -101,8 +101,8 @@
 
                                 <?php
                                     $q4 = "SELECT * FROM category where id='$row->categoryID'";
-                                    $r4 = mysql_query($q4);
-                                    $row4 = mysql_fetch_object($r4);
+                                    $r4 = mysqli_query($conn,$q4);
+                                    $row4 = mysqli_fetch_object($r4);
                                     echo "Category: ".$row4->type;
                                 ?>
                             </div>
