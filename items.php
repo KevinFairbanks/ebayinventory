@@ -98,7 +98,8 @@
                           <?php echo $row->brand; ?> - <?php echo $row->title; ?>
 
                           <div class="float-right">
-                              <div class='info-bar'><span class='<?php echo $listLabel; ?>'><?php echo $listLabel ?></span> <span class='bin' style='background-color:<?php echo $row1->color; ?>;'>Bin <?php echo $row1->bid ?></span></div>
+                              <b>Item</b>: <?php echo $row->serialnum; ?>
+                              <!-- <div class='info-bar'><span class='<?php echo $listLabel; ?>'><?php echo $listLabel ?></span> <span class='bin' style='background-color:<?php echo $row1->color; ?>;'>Bin <?php echo $row1->bid ?></span></div> -->
                           </div>
                       </div>
                       </h5>
@@ -114,7 +115,8 @@
                               $row4 = mysqli_fetch_object($r4);
                               echo "<b>Category</b>: ".$row4->type." | ";
                           ?>
-                          <b>Item</b>: <?php echo $row->serialnum; ?>
+                          <span class='bin' style='background-color:<?php echo $row1->color; ?>;'>Bin <?php echo $row1->bid ?></span> |
+                          <span class='<?php echo $listLabel; ?>'><?php echo $listLabel ?></span>
                       </div>
                     </div>
                   </div>

@@ -11,39 +11,39 @@
 #accordion .card-header div {
   font-size: 14px;
 }
-/* line 17, ../inventory_styles/sass/base.scss */
-#accordion .card-header .info-bar .bin {
-  padding: 3px 5px;
-  border-radius: 4px;
-  color: white;
-}
-/* line 22, ../inventory_styles/sass/base.scss */
+/* line 18, ../inventory_styles/sass/base.scss */
 #accordion .card-header .info-bar .listed {
   color: #999;
   text-shadow: 0px 2px #FFF;
 }
-/* line 28, ../inventory_styles/sass/base.scss */
+/* line 24, ../inventory_styles/sass/base.scss */
 #accordion .card-body {
   font-size: 13px;
 }
+/* line 26, ../inventory_styles/sass/base.scss */
+#accordion .card-body .bin {
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: white;
+}
 
-/* line 33, ../inventory_styles/sass/base.scss */
+/* line 34, ../inventory_styles/sass/base.scss */
 .ui-container {
   padding: 15px;
   border: 1px solid #ededed;
   background-color: whitesmoke;
   border-radius: 4px;
 }
-/* line 39, ../inventory_styles/sass/base.scss */
+/* line 40, ../inventory_styles/sass/base.scss */
 .ui-container.dash {
   text-align: center;
   text-shadow: 0 2px #FFF;
 }
-/* line 42, ../inventory_styles/sass/base.scss */
+/* line 43, ../inventory_styles/sass/base.scss */
 .ui-container.dash h3 {
   color: #999;
 }
-/* line 46, ../inventory_styles/sass/base.scss */
+/* line 47, ../inventory_styles/sass/base.scss */
 .ui-container.item {
   position: relative;
   padding: 15px;
@@ -53,22 +53,22 @@
   margin-bottom: 5px;
   font-size: 13px;
 }
-/* line 54, ../inventory_styles/sass/base.scss */
+/* line 55, ../inventory_styles/sass/base.scss */
 .ui-container.item .title {
   font-size: 15px;
 }
-/* line 57, ../inventory_styles/sass/base.scss */
+/* line 58, ../inventory_styles/sass/base.scss */
 .ui-container.item .item-attr {
   text-align: right;
   font-size: 14px;
 }
 
-/* line 64, ../inventory_styles/sass/base.scss */
+/* line 66, ../inventory_styles/sass/base.scss */
 section {
   padding: 20px;
 }
 
-/* line 67, ../inventory_styles/sass/base.scss */
+/* line 69, ../inventory_styles/sass/base.scss */
 .my-group .form-control {
   width: 50%;
 }

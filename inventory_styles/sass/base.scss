@@ -14,11 +14,7 @@ body{
             font-size:14px;
         }
         .info-bar{
-            .bin{
-                padding:3px 5px;
-                border-radius:4px;
-                color:white
-            }
+
             .listed{
                 color:#999;
                 text-shadow: 0px 2px #FFF;
@@ -27,6 +23,11 @@ body{
     }
     .card-body{
         font-size:13px;
+        .bin{
+            padding:3px 5px;
+            border-radius:4px;
+            color:white
+        }
     }
     margin-bottom: 5px;
 }
@@ -58,6 +59,7 @@ body{
             text-align:right;
             font-size:14px;
         }
+
 
     }
 }
