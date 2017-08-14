@@ -57,14 +57,31 @@
             $sn .= (!($i % 5) && $i ? '' : '').$chars[rand(0, $max)];
         }
 
-
         $q = "INSERT into item (brand, title, description, photo, color, size, serialnum, binID, categoryID, isSold,isListed) VALUES ('$brand','$title','$desc','$file','$color','$size', '$sn','$binnumber','$catID','$sold','$listed')";
         $r = mysqli_query($conn,$q);
 
         header("location: items.php");
 
     }
-
+    // if(isset($_POST["searchitems"])) {
+    //
+    //     $filterKeyword = $_POST['filter'];
+    //     $keyword = $_POST['sch'];
+    //
+    //     switch($filterKeyword){
+    //         case "Brand":
+    //         $customSearch = "brand LIKE '%$keyword%'";
+    //         break;
+    //         case "Bin":
+    //         break;
+    //         case "Category":
+    //         break;
+    //         case "Size":
+    //         break;
+    //     }
+    //     $searchquery = "SELECT * FROM item WHERE $customSearch";
+    //     exit();
+    // }
     if(isset($_POST["addcat"])) {
         $cat = str_replace("'","&rsquo;",$_POST['catname']);
 
