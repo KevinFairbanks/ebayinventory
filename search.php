@@ -60,10 +60,11 @@
                     <div class="card-header" role="tab" id="headingOne">
                       <h5 class="mb-0">
                         <div data-toggle="collapse" href="#collapse<?php echo $row->id; ?>" aria-expanded="true" aria-controls="collapseOne">
-                          <?php echo $row->brand; ?> - <?php echo $row->title; ?>
+                          <?php echo $row->brand; ?> - <?php echo $row->title; ?> <br>
+                          <b>Item</b>: <?php echo $row->serialnum; ?>
 
                           <div class="float-right">
-                              <b>Item</b>: <?php echo $row->serialnum; ?>
+
                               <!-- <div class='info-bar'><span class='<?php echo $listLabel; ?>'><?php echo $listLabel ?></span> <span class='bin' style='background-color:<?php echo $row1->color; ?>;'>Bin <?php echo $row1->bid ?></span></div> -->
                           </div>
                       </div>
