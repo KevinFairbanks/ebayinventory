@@ -18,7 +18,9 @@
 
         $itemq = "SELECT * from item WHERE binID='$row->id' ORDER BY id ASC";
         $itemr = mysqli_query($conn,$itemq);
-
+    }else{
+        $itemq = "SELECT * from item ORDER BY id ASC";
+        $itemr = mysqli_query($conn,$itemq);
     }
 
 
@@ -48,30 +50,40 @@
                         $listLabel = "";
                     }
                 ?>
-                <div class="ui-container item">
-                    <?php
-                        $q1 = "SELECT * FROM bin where id='$row->binID'";
-                        $r1 = mysqli_query($conn, $q1);
-                        $row1 = mysqli_fetch_object($r1);
+                <?php
+                    $q1 = "SELECT * FROM bin where id='$row->binID'";
+                    $r1 = mysqli_query($conn, $q1);
+                    $row1 = mysqli_fetch_object($r1);
+                ?>
+                <div id="accordion" role="tablist">
+                  <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#collapse<?php echo $row->id; ?>" aria-expanded="true" aria-controls="collapseOne">
+                          <?php echo $row->brand; ?> - <?php echo $row->title; ?>
 
-                        echo "<div class='info-bar'><span class='$listLabel'>$listLabel</span> <span class='bin' style='background-color:$row1->color;'>Bin $row1->bid</span></div>";
-                    ?>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <?php echo "<div class='title'>$row->title</div>"; ?>
-                            <b>Brand: </b><?php echo $row->brand ?> | <b>Color</b>: <?php echo $row->color ?> | <b>Size</b>: <?php echo $row->size ?> |
-                            <?php
-                                $q4 = "SELECT * FROM category where id='$row->categoryID'";
-                                $r4 = mysqli_query($conn,$q4);
-                                $row4 = mysqli_fetch_object($r4);
-                                echo "<b>Category</b>: ".$row4->type." | ";
-                            ?>
-                            <b>Item</b>: <?php echo $row->serialnum; ?>
-                        </div>
+                          <div class="float-right">
+                              <div class='info-bar'><span class='<?php echo $listLabel; ?>'><?php echo $listLabel ?></span> <span class='bin' style='background-color:<?php echo $row1->color; ?>;'>Bin <?php echo $row1->bid ?></span></div>
+                          </div>
+                      </div>
+                      </h5>
                     </div>
 
+                    <div id="collapse<?php echo $row->id; ?>" class="collapse hide" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                          <?php echo "<div class='title'>$row->title</div>"; ?>
+                          <b>Brand: </b><?php echo $row->brand ?> | <b>Color</b>: <?php echo $row->color ?> | <b>Size</b>: <?php echo $row->size ?> |
+                          <?php
+                              $q4 = "SELECT * FROM category where id='$row->categoryID'";
+                              $r4 = mysqli_query($conn,$q4);
+                              $row4 = mysqli_fetch_object($r4);
+                              echo "<b>Category</b>: ".$row4->type." | ";
+                          ?>
+                          <b>Item</b>: <?php echo $row->serialnum; ?>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
                 <?php endwhile; ?>
 
             </div>

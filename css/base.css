@@ -2,23 +2,48 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 11, ../inventory_styles/sass/base.scss */
+/* line 10, ../inventory_styles/sass/base.scss */
+#accordion {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+/* line 13, ../inventory_styles/sass/base.scss */
+#accordion .card-header div {
+  font-size: 14px;
+}
+/* line 17, ../inventory_styles/sass/base.scss */
+#accordion .card-header .info-bar .bin {
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: white;
+}
+/* line 22, ../inventory_styles/sass/base.scss */
+#accordion .card-header .info-bar .listed {
+  color: #999;
+  text-shadow: 0px 2px #FFF;
+}
+/* line 28, ../inventory_styles/sass/base.scss */
+#accordion .card-body {
+  font-size: 13px;
+}
+
+/* line 33, ../inventory_styles/sass/base.scss */
 .ui-container {
   padding: 15px;
   border: 1px solid #ededed;
   background-color: whitesmoke;
   border-radius: 4px;
 }
-/* line 17, ../inventory_styles/sass/base.scss */
+/* line 39, ../inventory_styles/sass/base.scss */
 .ui-container.dash {
   text-align: center;
   text-shadow: 0 2px #FFF;
 }
-/* line 20, ../inventory_styles/sass/base.scss */
+/* line 42, ../inventory_styles/sass/base.scss */
 .ui-container.dash h3 {
   color: #999;
 }
-/* line 24, ../inventory_styles/sass/base.scss */
+/* line 46, ../inventory_styles/sass/base.scss */
 .ui-container.item {
   position: relative;
   padding: 15px;
@@ -28,34 +53,22 @@
   margin-bottom: 5px;
   font-size: 13px;
 }
-/* line 32, ../inventory_styles/sass/base.scss */
+/* line 54, ../inventory_styles/sass/base.scss */
 .ui-container.item .title {
   font-size: 15px;
 }
-/* line 35, ../inventory_styles/sass/base.scss */
+/* line 57, ../inventory_styles/sass/base.scss */
 .ui-container.item .item-attr {
   text-align: right;
   font-size: 14px;
 }
-/* line 39, ../inventory_styles/sass/base.scss */
-.ui-container.item .info-bar {
-  position: absolute;
-  right: -1px;
-  top: 2px;
-}
-/* line 43, ../inventory_styles/sass/base.scss */
-.ui-container.item .info-bar .bin {
-  padding: 3px 5px;
-  border-radius: 0 4px 0 4px;
-  color: white;
-}
-/* line 48, ../inventory_styles/sass/base.scss */
-.ui-container.item .info-bar .listed {
-  color: orange;
-  font-weight: bold;
-}
 
-/* line 55, ../inventory_styles/sass/base.scss */
+/* line 64, ../inventory_styles/sass/base.scss */
 section {
   padding: 20px;
+}
+
+/* line 67, ../inventory_styles/sass/base.scss */
+.my-group .form-control {
+  width: 50%;
 }

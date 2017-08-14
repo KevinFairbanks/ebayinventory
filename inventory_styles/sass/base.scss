@@ -7,7 +7,29 @@
 body{
 }
 
-
+#accordion{
+    cursor: pointer;
+    .card-header{
+        div{
+            font-size:14px;
+        }
+        .info-bar{
+            .bin{
+                padding:3px 5px;
+                border-radius:4px;
+                color:white
+            }
+            .listed{
+                color:#999;
+                text-shadow: 0px 2px #FFF;
+            }
+        }
+    }
+    .card-body{
+        font-size:13px;
+    }
+    margin-bottom: 5px;
+}
 .ui-container{
     padding:15px;
     border:1px solid #ededed;
@@ -36,20 +58,7 @@ body{
             text-align:right;
             font-size:14px;
         }
-        .info-bar{
-            position: absolute;
-            right:-1px;
-            top:2px;
-            .bin{
-                padding:3px 5px;
-                border-radius:0 4px 0 4px;
-                color:white
-            }
-            .listed{
-                color:orange;
-                font-weight:bold;
-            }
-        }
+
     }
 }
 section{
