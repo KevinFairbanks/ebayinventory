@@ -5,7 +5,7 @@
         // GET SOME VARIABLES
         $name = $_POST['name'];
         $pass = $_POST['pass'];
-        
+
         include('includes/header.php');
     ?>
     <?php
