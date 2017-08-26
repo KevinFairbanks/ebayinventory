@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <?php if( isset( $_POST['submit'] ) ): ?>
     <?php
         // GET SOME VARIABLES
@@ -14,7 +14,7 @@
             }
             if( $name == "ebay" && $pass == "ebay!_x" ){
                 // Authentication successful - Set session
-                session_start();
+
                 $_SESSION['auth'] = 1;
                 setcookie("username", $_POST['name'], time()+(84600*30));
                 header('Location: index.php');
