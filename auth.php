@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
     <?php
         // GET SOME VARIABLES
         $name = $_POST['name'];
