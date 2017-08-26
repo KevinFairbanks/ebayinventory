@@ -1,4 +1,10 @@
 <?php session_start(); ?>
+<?php
+    if($_SESSION['auth'] == 1;){
+        setcookie("username", $_POST['name'], time()+(84600*30));
+        header('Location: index.php');
+    }
+?>
 <?php include('includes/header.php'); ?>
 <?php if( isset( $_POST['submit'] ) ): ?>
     <?php
