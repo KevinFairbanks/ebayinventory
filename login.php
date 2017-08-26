@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php
-    if($_SESSION['auth'] == 1;){
+    if($_SESSION['auth'] == 1){
         setcookie("username", $_POST['name'], time()+(84600*30));
         header('Location: index.php');
     }
