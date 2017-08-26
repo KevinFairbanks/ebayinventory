@@ -17,8 +17,8 @@
 
                 $_SESSION['auth'] = 1;
                 // setcookie("username", $_POST['name'], time()+(84600*30));
-                header('Location: index.php');
-                exit;
+                // header('Location: index.php');
+                // exit;
 
             }else {
                 echo "ERROR: Incorrect username or password!";
