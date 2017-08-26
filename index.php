@@ -1,4 +1,5 @@
 <?php
+phpinfo();
     include('includes/config.php');
     session_start();
 
