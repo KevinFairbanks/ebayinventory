@@ -72,3 +72,16 @@ section {
 .my-group .form-control {
   width: 50%;
 }
+
+/* line 72, ../inventory_styles/sass/base.scss */
+.login {
+  margin-top: 40px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  padding: 30px;
+}
+/* line 78, ../inventory_styles/sass/base.scss */
+.login img {
+  margin-bottom: 30px;
+}

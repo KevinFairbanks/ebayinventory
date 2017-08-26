@@ -9,6 +9,7 @@
 
     include('includes/functions.php');
     include('includes/header.php');
+    include('includes/nav.php');
 ?>
 <section style='margin-top:45px;'>
 

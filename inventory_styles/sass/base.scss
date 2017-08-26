@@ -69,3 +69,13 @@ section{
 .my-group .form-control{
     width:50%;
 }
+.login{
+    margin-top: 40px;
+    border:1px solid #CCC;
+    border-radius:4px;
+    background-color:lighten(#CCC, 17%);
+    padding:30px;
+    img{
+        margin-bottom: 30px;
+    }
+}
