@@ -1,5 +1,5 @@
 <?php
-    // $curdir = basename($_SERVER['PHP_SELF']);
+    $curdir = basename($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
