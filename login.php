@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include('includes/header.php'); ?>
 <?php if( isset( $_POST['submit'] ) ): ?>
     <?php
         // GET SOME VARIABLES
@@ -28,33 +29,30 @@
         }
 
     ?>
-<?php include('includes/header.php'); ?>
+
 <?php else: ?>
-
     <!-- enter some shit in already -->
-
 <?php endif; ?>
-<?php include('includes/header.php'); ?>
 
-    <div class="container">
-        <div class="row justify-content-center">
-        <div class="col-lg-4">
-            <div class="login">
-                <img src="img/ebay-logo.png" alt="">
-                <form method="post" action="">
-                    <div class="form-group">
-                        <label for="">Username:</label>
-                        <input type="text" name="name" value="" class='form-control'>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Password: </label>
-                        <input type="password" name="pass" class='form-control'>
-                    </div>
-                    <input type="submit" name="submit" value="Log In" class='btn btn-success'>
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-lg-4">
+        <div class="login">
+            <img src="img/ebay-logo.png" alt="">
+            <form method="post" action="">
+                <div class="form-group">
+                    <label for="">Username:</label>
+                    <input type="text" name="name" value="" class='form-control'>
+                </div>
+                <div class="form-group">
+                    <label for="">Password: </label>
+                    <input type="password" name="pass" class='form-control'>
+                </div>
+                <input type="submit" name="submit" value="Log In" class='btn btn-success'>
 
-                </form>
-            </div>
+            </form>
         </div>
     </div>
+</div>
 
 <?php include('includes/footer.php'); ?>
