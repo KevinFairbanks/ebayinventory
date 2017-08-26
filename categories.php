@@ -1,15 +1,14 @@
 <?php
-    include('includes/config.php');
-
+    session_start();
     if (!isset($_SESSION['auth']) || $_SESSION['auth'] != 1) {
         header('Location: login.php');
         exit();
     }
 
-    include('includes/functions.php');
+    include('includes/config.php');
     include('includes/header.php');
+    include('includes/functions.php');
     include('includes/nav.php');
-
 
     $catq = "SELECT * from category ORDER BY type ASC";
     $catr = mysqli_query($conn,$catq);

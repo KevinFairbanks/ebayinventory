@@ -1,13 +1,14 @@
 <?php
-    include('includes/config.php');
-    include('includes/functions.php');
-    include('includes/header.php');
-    include('includes/nav.php');
-
+    session_start();
     if (!isset($_SESSION['auth']) || $_SESSION['auth'] != 1) {
         header('Location: login.php');
         exit();
     }
+
+    include('includes/config.php');
+    include('includes/header.php');
+    include('includes/functions.php');
+    include('includes/nav.php');
 
     $itemq = "SELECT * from item ORDER BY id ASC";
     $itemr = mysqli_query($conn,$itemq);
