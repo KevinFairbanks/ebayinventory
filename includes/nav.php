@@ -21,6 +21,9 @@
         <li class="nav-item <?php if($curdir == "search.php"){echo "active";} ?>">
           <a class="nav-link" href="search.php">Quick Search</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>

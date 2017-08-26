@@ -11,11 +11,11 @@
             <form method="post" action="auth.php">
                 <div class="form-group">
                     <label for="">Username:</label>
-                    <input type="text" name="name" value="" class='form-control'>
+                    <input type="text" name="name" value="" class='form-control' placeholder='Username'>
                 </div>
                 <div class="form-group">
                     <label for="">Password: </label>
-                    <input type="password" name="pass" class='form-control'>
+                    <input type="password" name="pass" class='form-control' placeholder='Password'>
                 </div>
                 <input type="submit" name="submit" value="Log In" class='btn btn-success'>
             </form>
