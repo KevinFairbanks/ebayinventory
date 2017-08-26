@@ -11,7 +11,7 @@
         if( empty($pass) ) {
             header('Location: login.php');
         }
-        if( $name == "ebay" && $pass == "ebay" ){
+        if( $name == "ebay" && $pass == "ebay!_x" ){
             // Authentication successful - Set session
 
             $_SESSION['auth'] = 1;
