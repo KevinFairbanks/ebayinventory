@@ -4,13 +4,13 @@
         // GET SOME VARIABLES
         $name = $_POST['name'];
         $pass = $_POST['pass'];
-        
+
         if( isset($name) || isset($pass) ){
             if( empty($name) ) {
-                header('Location: login.php');
+                // header('Location: login.php');
             }
             if( empty($pass) ) {
-                header('Location: login.php');
+                // header('Location: login.php');
             }
             if( $name == "ebay" && $pass == "ebay!_x" ){
                 // Authentication successful - Set session
