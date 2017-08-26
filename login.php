@@ -45,7 +45,7 @@
     <div class="col-lg-4">
         <div class="login">
             <img src="img/ebay-logo.png" alt="">
-            <form method="post" action="/">
+            <form method="post" action="login.php">
                 <div class="form-group">
                     <label for="">Username:</label>
                     <input type="text" name="name" value="" class='form-control'>
