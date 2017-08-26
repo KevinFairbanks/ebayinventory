@@ -1,14 +1,10 @@
 
 <?php if( isset( $_POST['submit'] ) ): ?>
-
     <?php
         // GET SOME VARIABLES
         $name = $_POST['name'];
         $pass = $_POST['pass'];
-
-        include('includes/header.php');
-    ?>
-    <?php
+        
         if( isset($name) || isset($pass) ){
             if( empty($name) ) {
                 header('Location: login.php');
@@ -31,7 +27,7 @@
         }
 
     ?>
-
+<?php include('includes/header.php'); ?>
 <?php else: ?>
 
     <!-- enter some shit in already -->
