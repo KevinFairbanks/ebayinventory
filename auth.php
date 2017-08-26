@@ -1,5 +1,6 @@
 <?php
     // GET SOME VARIABLES
+    session_start();
     $name = $_POST['name'];
     $pass = $_POST['pass'];
 
@@ -15,9 +16,10 @@
 
             $_SESSION['auth'] = 1;
             setcookie("username", $_POST['name'], time()+(84600*30));
-            header("Location: /");
+            header('Location: /');
 
         }else {
+            header('Location: /');
             echo "ERROR: Incorrect username or password!";
         }
     } else {
