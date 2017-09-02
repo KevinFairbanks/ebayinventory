@@ -4,38 +4,136 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import '_colors';
 
-body{
+@media (min-width: 576px) {
+
 }
 
-#accordion{
-    cursor: pointer;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
     .card-header{
+        .serial{
+            text-align:right;
+        }
+    }
+    .card-body{
+        .item-info-action{
+
+        }
+        .item-info-action{
+            text-align: right;
+            .action-container{
+                button{
+                    display:block;
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .card-body{
+        .item-info-action{
+            .action-container{
+                margin-top: 0 !important;
+            }
+        }
+    }
+}
+
+body{
+}
+h1{
+    margin-top: 30px;
+    font-size:20px;
+    text-transform: uppercase;
+}
+#accordion{
+    .card-header{
+        .nwt{
+            display:inline-block;
+            background-color:#00ccff;
+            border-radius: 4px;
+            padding:3px 5px;
+            font-size:10px;
+            color:white;
+            font-weight: bold;
+        }
+        cursor: pointer;
         div{
             font-size:14px;
         }
         .info-bar{
-
             .listed{
                 color:#999;
                 text-shadow: 0px 2px #FFF;
             }
         }
+        .serial{
+            // text-align:right;
+        }
+    }
+    .card{
+        margin-bottom: 3px;
     }
     .card-body{
-        font-size:13px;
+        position: relative;
+        .action-container{
+            display:inline-block;
+            button{
+                cursor: pointer;
+                font-size:12px;
+            }
+        }
+        .item-info-action{
+            .action-container{
+                margin-top: 15px;
+                text-align:left;
+                button{
+                    // display:block;
+                    // width:100%;
+                    margin-bottom: 5px;
+                }
+            }
+        }
         .bin{
             padding:3px 5px;
             border-radius:4px;
-            color:white
+            color:white;
+            white-space: nowrap;
+            font-size:13px;
         }
     }
     margin-bottom: 5px;
+}
+.unlisted-items,
+.listed-items{
+    h4{
+        font-size:15px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .no-items{
+        border:1px solid #CCC;
+        padding:10px;
+        font-size:12px;
+        background-color: #f5f4eb;
+    }
+}
+.listed-items{
+    margin-bottom: 30px;
+
 }
 .ui-container{
     padding:15px;
     border:1px solid #ededed;
     background-color: $bgwhite;
     border-radius:4px;
+    margin-bottom: 30px;
 
     &.dash{
         text-align:center;
@@ -59,8 +157,6 @@ body{
             text-align:right;
             font-size:14px;
         }
-
-
     }
 }
 section{

@@ -28,16 +28,31 @@
 
     if(isset($_POST["additem"])) {
 
-        $file = $_POST['uploadedfile'];
+        // $file = $_POST['uploadedfile'];
         $brand = $_POST['brand'];
         $title = $_POST['title'];
-        $desc = $_POST['desc'];
+        // $desc = $_POST['desc'];
         $color = $_POST['color'];
         $size = $_POST['size'];
         $binnumber = $_POST['binum'];
         $catID = $_POST['catid'];
-        $sold = $_POST['sold'];
-        $listed = $_POST['listed'];
+        $nwt = $_POST['nwt'];
+        // $sold = $_POST['sold'];
+        $listed = isset($_POST['listed']);
+        $lb = $_POST['lb'];
+        $oz = $_POST['oz'];
+
+        if($listed == ""){
+            $listed='0';
+        }
+        if($lb == ""){
+            $lb = '0';
+        }
+        if($oz == ""){
+            $oz = '0';
+        }
+
+        $weight = $lb . "lb " . $oz . "oz";
 
         if($sold == ""){
             $sold = '0';
@@ -57,31 +72,13 @@
             $sn .= (!($i % 5) && $i ? '' : '').$chars[rand(0, $max)];
         }
 
-        $q = "INSERT into item (brand, title, description, photo, color, size, serialnum, binID, categoryID, isSold,isListed) VALUES ('$brand','$title','$desc','$file','$color','$size', '$sn','$binnumber','$catID','$sold','$listed')";
+        $q = "INSERT into item (brand, title, description, photo, color, size, serialnum, binID, categoryID, isSold,isListed, weight, isNWT) VALUES ('$brand','$title','$desc','$file','$color','$size', '$sn','$binnumber','$catID','$sold','$listed', '$weight', '$nwt')";
         $r = mysqli_query($conn,$q);
 
         header("location: items.php");
 
     }
-    // if(isset($_POST["searchitems"])) {
-    //
-    //     $filterKeyword = $_POST['filter'];
-    //     $keyword = $_POST['sch'];
-    //
-    //     switch($filterKeyword){
-    //         case "Brand":
-    //         $customSearch = "brand LIKE '%$keyword%'";
-    //         break;
-    //         case "Bin":
-    //         break;
-    //         case "Category":
-    //         break;
-    //         case "Size":
-    //         break;
-    //     }
-    //     $searchquery = "SELECT * FROM item WHERE $customSearch";
-    //     exit();
-    // }
+
     if(isset($_POST["addcat"])) {
         $cat = str_replace("'","&rsquo;",$_POST['catname']);
 
@@ -133,6 +130,12 @@
             break;
             case "category":
                 $q = "SELECT COUNT(id) from category";
+                $r = mysqli_query($conn,$q);
+                $count = mysqli_fetch_array($r);
+                return $count[0];
+            break;
+            case "sold":
+                $q = "SELECT COUNT(id) from item where isSold='1'";
                 $r = mysqli_query($conn,$q);
                 $count = mysqli_fetch_array($r);
                 return $count[0];

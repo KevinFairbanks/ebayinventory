@@ -2,48 +2,136 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 10, ../inventory_styles/sass/base.scss */
+@media (min-width: 992px) {
+  /* line 17, ../inventory_styles/sass/base.scss */
+  .card-header .serial {
+    text-align: right;
+  }
+
+  /* line 25, ../inventory_styles/sass/base.scss */
+  .card-body .item-info-action {
+    text-align: right;
+  }
+  /* line 28, ../inventory_styles/sass/base.scss */
+  .card-body .item-info-action .action-container button {
+    display: block;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 41, ../inventory_styles/sass/base.scss */
+  .card-body .item-info-action .action-container {
+    margin-top: 0 !important;
+  }
+}
+/* line 50, ../inventory_styles/sass/base.scss */
+h1 {
+  margin-top: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* line 55, ../inventory_styles/sass/base.scss */
 #accordion {
-  cursor: pointer;
   margin-bottom: 5px;
 }
-/* line 13, ../inventory_styles/sass/base.scss */
+/* line 56, ../inventory_styles/sass/base.scss */
+#accordion .card-header {
+  cursor: pointer;
+}
+/* line 57, ../inventory_styles/sass/base.scss */
+#accordion .card-header .nwt {
+  display: inline-block;
+  background-color: #00ccff;
+  border-radius: 4px;
+  padding: 3px 5px;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+}
+/* line 67, ../inventory_styles/sass/base.scss */
 #accordion .card-header div {
   font-size: 14px;
 }
-/* line 18, ../inventory_styles/sass/base.scss */
+/* line 71, ../inventory_styles/sass/base.scss */
 #accordion .card-header .info-bar .listed {
   color: #999;
   text-shadow: 0px 2px #FFF;
 }
-/* line 24, ../inventory_styles/sass/base.scss */
-#accordion .card-body {
-  font-size: 13px;
+/* line 80, ../inventory_styles/sass/base.scss */
+#accordion .card {
+  margin-bottom: 3px;
 }
-/* line 26, ../inventory_styles/sass/base.scss */
+/* line 83, ../inventory_styles/sass/base.scss */
+#accordion .card-body {
+  position: relative;
+}
+/* line 85, ../inventory_styles/sass/base.scss */
+#accordion .card-body .action-container {
+  display: inline-block;
+}
+/* line 87, ../inventory_styles/sass/base.scss */
+#accordion .card-body .action-container button {
+  cursor: pointer;
+  font-size: 12px;
+}
+/* line 93, ../inventory_styles/sass/base.scss */
+#accordion .card-body .item-info-action .action-container {
+  margin-top: 15px;
+  text-align: left;
+}
+/* line 96, ../inventory_styles/sass/base.scss */
+#accordion .card-body .item-info-action .action-container button {
+  margin-bottom: 5px;
+}
+/* line 103, ../inventory_styles/sass/base.scss */
 #accordion .card-body .bin {
   padding: 3px 5px;
   border-radius: 4px;
   color: white;
+  white-space: nowrap;
+  font-size: 13px;
 }
 
-/* line 34, ../inventory_styles/sass/base.scss */
+/* line 115, ../inventory_styles/sass/base.scss */
+.unlisted-items h4,
+.listed-items h4 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+/* line 120, ../inventory_styles/sass/base.scss */
+.unlisted-items .no-items,
+.listed-items .no-items {
+  border: 1px solid #CCC;
+  padding: 10px;
+  font-size: 12px;
+  background-color: #f5f4eb;
+}
+
+/* line 127, ../inventory_styles/sass/base.scss */
+.listed-items {
+  margin-bottom: 30px;
+}
+
+/* line 131, ../inventory_styles/sass/base.scss */
 .ui-container {
   padding: 15px;
   border: 1px solid #ededed;
   background-color: whitesmoke;
   border-radius: 4px;
+  margin-bottom: 30px;
 }
-/* line 40, ../inventory_styles/sass/base.scss */
+/* line 138, ../inventory_styles/sass/base.scss */
 .ui-container.dash {
   text-align: center;
   text-shadow: 0 2px #FFF;
 }
-/* line 43, ../inventory_styles/sass/base.scss */
+/* line 141, ../inventory_styles/sass/base.scss */
 .ui-container.dash h3 {
   color: #999;
 }
-/* line 47, ../inventory_styles/sass/base.scss */
+/* line 145, ../inventory_styles/sass/base.scss */
 .ui-container.item {
   position: relative;
   padding: 15px;
@@ -53,27 +141,27 @@
   margin-bottom: 5px;
   font-size: 13px;
 }
-/* line 55, ../inventory_styles/sass/base.scss */
+/* line 153, ../inventory_styles/sass/base.scss */
 .ui-container.item .title {
   font-size: 15px;
 }
-/* line 58, ../inventory_styles/sass/base.scss */
+/* line 156, ../inventory_styles/sass/base.scss */
 .ui-container.item .item-attr {
   text-align: right;
   font-size: 14px;
 }
 
-/* line 66, ../inventory_styles/sass/base.scss */
+/* line 162, ../inventory_styles/sass/base.scss */
 section {
   padding: 20px;
 }
 
-/* line 69, ../inventory_styles/sass/base.scss */
+/* line 165, ../inventory_styles/sass/base.scss */
 .my-group .form-control {
   width: 50%;
 }
 
-/* line 72, ../inventory_styles/sass/base.scss */
+/* line 168, ../inventory_styles/sass/base.scss */
 .login {
   margin-top: 40px;
   border: 1px solid #CCC;
@@ -81,7 +169,7 @@ section {
   background-color: #f7f7f7;
   padding: 30px;
 }
-/* line 78, ../inventory_styles/sass/base.scss */
+/* line 174, ../inventory_styles/sass/base.scss */
 .login img {
   margin-bottom: 30px;
 }

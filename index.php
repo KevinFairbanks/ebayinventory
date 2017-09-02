@@ -14,22 +14,28 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="ui-container dash">
                     <h3>Items</h3>
                     <h1><a href="items.php"><?php echo getNumberCount('item'); ?></a></h1>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="ui-container dash">
                     <h3>Bins</h3>
                     <h1><a href="bins.php"><?php echo getNumberCount('bin'); ?></a></h1>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="ui-container dash">
                     <h3>Categories</h3>
                     <h1><a href="categories.php"><?php echo getNumberCount('category'); ?></a></h1>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="ui-container dash">
+                    <h3>Sold Items</h3>
+                    <h1><a href="items-sold.php"><?php echo getNumberCount('sold'); ?></a></h1>
                 </div>
             </div>
 
