@@ -28,16 +28,13 @@
 
     if(isset($_POST["additem"])) {
 
-        // $file = $_POST['uploadedfile'];
         $brand = $_POST['brand'];
         $title = $_POST['title'];
-        // $desc = $_POST['desc'];
         $color = $_POST['color'];
         $size = $_POST['size'];
         $binnumber = $_POST['binum'];
         $catID = $_POST['catid'];
         $nwt = $_POST['nwt'];
-        // $sold = $_POST['sold'];
         $listed = isset($_POST['listed']);
         $lb = $_POST['lb'];
         $oz = $_POST['oz'];

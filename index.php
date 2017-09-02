@@ -4,7 +4,6 @@
         header('Location: login.php');
         exit();
     }
-
     include('includes/config.php');
     include('includes/functions.php');
     include('includes/header.php');
