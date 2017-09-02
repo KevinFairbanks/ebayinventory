@@ -186,7 +186,7 @@
 
                     <?php
                         if($row = mysqli_num_rows($itemlistedr) == 0){
-                            echo "<div class='no-items'><i>No Listed Items</i></div>";
+                            echo "<div class='no-items'><i>No Unlisted Items</i></div>";
                         }
                     ?>
 
