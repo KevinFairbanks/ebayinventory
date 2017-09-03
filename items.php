@@ -75,7 +75,7 @@
                                 <select class="form-control" name="catid">
                                     <option value="">Select Category</option>
                                     <?php
-                                        $q3 = "SELECT * FROM category";
+                                        $q3 = "SELECT * FROM category ORDER BY type ASC";
                                         $r3 = mysqli_query($conn,$q3);
                                         while($row3 = mysqli_fetch_object($r3)){
                                             echo "<option value='$row3->id'>$row3->type</option>";
