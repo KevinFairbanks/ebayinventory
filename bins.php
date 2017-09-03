@@ -53,6 +53,11 @@
                                 </td>
                                 <td>
                                     <button type="submit" name="removebin" class='btn btn-danger' value='<?php echo $row->id?>'>Delete</button>
+                                    <?php if($row->full==0): ?>
+                                        <button type="submit" name="fullbin" class='btn btn-warning' value='<?php echo $row->id?>'>Set Full</button>
+                                    <?php else: ?>
+                                        <button type="submit" name="availbin" class='btn btn-warning' value='<?php echo $row->id?>'>Set Avail</button>
+                                    <?php endif;?>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

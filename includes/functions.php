@@ -57,7 +57,7 @@
         for($i=0;$i<4;$i++){
             $sn .= (!($i % 5) && $i ? '' : '').$chars[rand(0, $max)];
         }
-        
+
         $q = "INSERT into item (brand,title,color,size,serialnum,binID,categoryID,isListed,weight,isNWT) VALUES ('$brand','$title','$color','$size', '$sn','$binnumber','$catID','$listed','$weight','$nwt')";
         $r = mysqli_query($conn,$q);
 
@@ -85,6 +85,18 @@
     if(isset($_POST["removebin"])){
         $rbin = $_POST["removebin"];
         $q = "DELETE FROM bin WHERE id='$rbin'";
+        $r = mysqli_query($conn, $q);
+        header("location: bins.php");
+    }
+    if(isset($_POST["fullbin"])){
+        $rbin = $_POST["fullbin"];
+        $q = "UPDATE bin SET full='1' WHERE id='$rbin'";
+        $r = mysqli_query($conn, $q);
+        header("location: bins.php");
+    }
+    if(isset($_POST["availbin"])){
+        $rbin = $_POST["availbin"];
+        $q = "UPDATE bin SET full='0' WHERE id='$rbin'";
         $r = mysqli_query($conn, $q);
         header("location: bins.php");
     }

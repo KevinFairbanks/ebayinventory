@@ -63,10 +63,14 @@
                                 <select class="form-control" name="binum">
                                     <option value="">Select Bin</option>
                                     <?php
-                                        $q = "SELECT * FROM bin";
+                                        $q = "SELECT * FROM bin ORDER BY bid";
                                         $r = mysqli_query($conn,$q);
                                         while($row = mysqli_fetch_object($r)){
-                                            echo "<option value='$row->id'>$row->bid</option>";
+                                            if($row->full){
+                                                echo "<option value='$row->id' disabled>$row->bid</option>";
+                                            }else{
+                                                echo "<option value='$row->id'>$row->bid</option>";
+                                            }
                                         }
                                     ?>
                                 </select>
