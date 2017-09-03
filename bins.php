@@ -52,7 +52,7 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <button type="submit" name="removebin" class='btn btn-danger' value='<?php echo $row->id?>'>Delete</button>
+                                    <button type="submit" name="removebin" class='btn btn-danger' value='<?php echo $row->id?>' onClick="javascript: return confirm('Are you sure you want to delete this?');">Delete</button>
                                     <?php if($row->full==0): ?>
                                         <button type="submit" name="fullbin" class='btn btn-warning' value='<?php echo $row->id?>'>Set Full</button>
                                     <?php else: ?>
