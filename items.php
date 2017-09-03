@@ -10,7 +10,7 @@
     include('includes/functions.php');
     include('includes/nav.php');
 
-    $itemq = "SELECT * from item WHERE isSold!='1' AND isListed='1' ORDER BY id ASC";
+    $itemq = "SELECT * from item WHERE isSold!='1' AND isListed='1' ORDER BY id DESC";
     $itemr = mysqli_query($conn,$itemq);
 
     $itemlistedq = "SELECT * from item WHERE isSold!='1' AND isListed='0' ORDER BY id ASC";
