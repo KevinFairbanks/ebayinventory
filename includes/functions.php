@@ -28,35 +28,24 @@
 
     if(isset($_POST["additem"])) {
 
-        $brand = $_POST['brand'];
-        $title = $_POST['title'];
-        $color = $_POST['color'];
-        $size = $_POST['size'];
-        $binnumber = $_POST['binum'];
-        $catID = $_POST['catid'];
-        $nwt = $_POST['nwt'];
-        $listed = isset($_POST['listed']);
-        $lb = $_POST['lb'];
-        $oz = $_POST['oz'];
-
-        if($listed == ""){
-            $listed='0';
-        }
-        if($lb == ""){
-            $lb = '0';
-        }
-        if($oz == ""){
-            $oz = '0';
-        }
+        $brand = isset($_POST['brand']) ? $_POST['brand'] : '';
+        $title = isset($_POST['title']) ? $_POST['title'] : '';
+        $color = isset($_POST['color']) ? $_POST['color'] : '';
+        $size = isset($_POST['size']) ? $_POST['size'] : '';
+        $binnumber = isset($_POST['binum']) ? $_POST['binum'] : '';
+        $catID = isset($_POST['catid']) ? $_POST['catid'] : '';
+        $nwt = isset($_POST['nwt']) ? $_POST['nwt'] : '0';
+        $listed = isset($_POST['listed']) ? $_POST['listed'] : '0';
+        $lb = isset($_POST['lb']) ? $_POST['lb'] : '0';
+        $oz = isset($_POST['oz']) ? $_POST['oz'] : '0';
 
         $weight = $lb . "lb " . $oz . "oz";
 
-        if($sold == ""){
-            $sold = '0';
-        }
-        if($listed == ""){
-            $listed = '0';
-        }
+        $brand = addslashes($brand);
+        $title = addslashes($title);
+        $color = addslashes($color);
+        $binnumber = addslashes($binnumber);
+        $size = addslashes($size);
 
         $chars = array(0,1,2,3,4,5,6,7,8,9);
         $charsA = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
@@ -68,8 +57,8 @@
         for($i=0;$i<4;$i++){
             $sn .= (!($i % 5) && $i ? '' : '').$chars[rand(0, $max)];
         }
-
-        $q = "INSERT into item (brand, title, description, photo, color, size, serialnum, binID, categoryID, isSold,isListed, weight, isNWT) VALUES ('$brand','$title','$desc','$file','$color','$size', '$sn','$binnumber','$catID','$sold','$listed', '$weight', '$nwt')";
+        
+        $q = "INSERT into item (brand,title,color,size,serialnum,binID,categoryID,isListed,weight,isNWT) VALUES ('$brand','$title','$color','$size', '$sn','$binnumber','$catID','$listed','$weight','$nwt')";
         $r = mysqli_query($conn,$q);
 
         header("location: items.php");
